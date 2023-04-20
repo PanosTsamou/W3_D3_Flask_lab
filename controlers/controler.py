@@ -11,7 +11,7 @@ def home():
 def orders():
     if request.method == "POST":
         ord= request.form["order-num"]
-        return redirect(url_for("order", ord=ord))
+        return redirect(url_for("order", ord=int(ord)-1))
     else:
         return render_template('orders.html', title = 'Orders', list_of_orders=list_of_orders)
 
