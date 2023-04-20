@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+{% block content %}
+    <section id = "main-order-section">
+        <aside>
+            <h3>Sorted by:</h3>
+            <nav class="short-by-menu">
+                <ul>
+                    <li>
+                        <a href="/delevered">Delivered</a>
+                    </li>
+                    <li>
+                        <a href="/pending">Pending</a>
+                    </li>
+                </ul>
+            </nav>
+            <Form accept="http://127.0.0.1:5000/orders" method="POST">
+                <h3>Find order with index:</h3>
+                <input type="number" name="order-num">
+                <p><input type="submit" value="Search"></p>
+            </Form>
+        </aside>
+        <article>
+            <h2 id="my-order-label"> My Orders</h2>
+            <div class="container row">
+            {% for order in list_of_orders %}
+                <div class="an-order">
+                    <h3>{{order.customer_name}}</h3>
+                    <p> Oredered:  {{order.date}}</p>
+                    <div class="quantity-price">
+                        <div class="quantity">
+                            <H3>Items:</H3>
+                            <h3>{{order.quantity}}</h3>   
+                        </div>
+                        <div class="price">
+                            <h3>Price:</h3>
+                            <h3>{{order.total_price}}</h3>
+                        </div>
+                    </div>
+                    <h3>{{order.delevered}}</h3>
+                    
+                </div>
+            {% endfor %}
+            
+            </div>
+        </article>
+    </section>
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+{% block content %}
+    <div class="an-order">
+        <h3>{{order.customer_name}}</h3>
+        <p> Oredered:  {{order.date}}</p>
+        <div class="quantity-price">
+            <div class="quantity">
+                <H3>Items:</H3>
+                <h3>{{order.quantity}}</h3>   
+            </div>
+            <div class="price">
+                <h3>Price:</h3>
+                <h3>{{order.total_price}}</h3>
+            </div>
+        </div>
+        <h3>{{order.delevered}}</h3>
+        
+    </div>
+{% endblock %}

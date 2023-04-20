@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        {% if title %}
+        <title> DIYShop - {{ title }} </title> 
+        {% else %}
+        <title> DIYShop </title>
+        {% endif %}
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    </head>
+    <body>
+        <header>
+            <h1> DIYShop </h1>
+            <nav>
+                <ul>
+                    <li>
+                        <a href="http://127.0.0.1:5000//home">Home</a>
+                    </li>
+                    <li>
+                        <a href="http://127.0.0.1:5000//shop">Shop</a>
+                    </li>
+                    <li>
+                        <a href="http://127.0.0.1:5000/orders">Orders</a>
+                    </li>
+                    <li>
+                        <a href="http://127.0.0.1:5000//about">About</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            {% block content %}  {% endblock %}
+
+        </main>
+        <footer class="container row">
+            
+                <h3>
+                    DIYShop
+                </h3>
+                <div class="footer-widget">
+                    <ul class="links">
+                        <li><a href="http://127.0.0.1:5000//home">Home</a></li>
+                        <li><a hhref="http://127.0.0.1:5000//shop">Shop</a></li>
+                        <li><a href="http://127.0.0.1:5000/orders">Orders</a></li>
+                        <li><a href="http://127.0.0.1:5000//about">About </a></li>
+                    </ul>
+                </div>
+                <div class="footer-widget">
+                    <p>3rd Floor <br> Street Edingburg EH1 1JS <br>
+                        <a href="#">0131 234 8844</a> <br>
+                        <a href="#">contact@DIYShop.com</a>
+                    </p>
+                </div>
+            
+        </footer>
+        
+    </body>
+</html>
