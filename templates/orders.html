@@ -23,22 +23,26 @@
             <h2 id="my-order-label"> My Orders</h2>
             <div class="container row">
             {% for order in list_of_orders %}
-                <div class="an-order">
-                    <h3>{{order.customer_name}}</h3>
-                    <p> Oredered:  {{order.date}}</p>
-                    <div class="quantity-price">
-                        <div class="quantity">
-                            <H3>Items:</H3>
-                            <h3>{{order.quantity}}</h3>   
+                <a class= "anch" href="/orders/{{list_of_orders.index(order)}}">
+               
+                    <div class="an-order">
+                        <h3>{{order.customer_name}}</h3>
+                        <p> Oredered:  {{order.date}}</p>
+                        <div class="quantity-price">
+                            <div class="quantity">
+                                <H3>Items:</H3>
+                                <h3>{{order.quantity}}</h3>   
+                            </div>
+                            <div class="price">
+                                <h3>Price:</h3>
+                                <h3>{{order.total_price}}</h3>
+                            </div>
                         </div>
-                        <div class="price">
-                            <h3>Price:</h3>
-                            <h3>{{order.total_price}}</h3>
-                        </div>
+                        <h3>{{order.delevered}}</h3>
+                        
                     </div>
-                    <h3>{{order.delevered}}</h3>
-                    
-                </div>
+                
+                </a>   
             {% endfor %}
             
             </div>

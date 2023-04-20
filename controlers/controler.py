@@ -17,4 +17,4 @@ def orders():
 
 @app.route("/orders/<ord>")
 def order(ord):
-    return render_template('order.html', order = list_of_orders[int(ord)-1])
+    return render_template('order.html', order = list_of_orders[int(ord)])
